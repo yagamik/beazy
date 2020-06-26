@@ -33,7 +33,7 @@ exports.deleteThing = (req, res, next) => {
                 Thing.deleteOne({ _id: req.params.id })
                     .then(() => res.status(200).json({ message: 'Objet supprimé !' }))
                     .catch(error => res.status(404).json({ error }));
-            })
+            });
         })
         .catch(error => res.status(500).json({ error }));
 };
